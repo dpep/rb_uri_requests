@@ -60,7 +60,7 @@ class UriRequestsTest < Minitest::Test
       'foo' => 'bar',
       'baz' => 'yay',
     }
-    res = URI("#{HTTPBIN}/get").get({}, headers: headers)
+    res = URI("#{HTTPBIN}/get").get nil, headers: headers
 
     headers.each do |header, val|
       assert_equal(
@@ -69,7 +69,7 @@ class UriRequestsTest < Minitest::Test
       )
     end
 
-    res = URI("#{HTTPBIN}/post").post({}, headers: headers)
+    res = URI("#{HTTPBIN}/post").post nil, headers: headers
     headers.each do |header, val|
       assert_equal(
         val,

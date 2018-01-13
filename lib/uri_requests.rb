@@ -8,7 +8,8 @@ module UriRequests
   VERSION = '0.0.1'
 
 
-  def get data = {}, opts = {}
+  def get data = nil, opts = {}
+    data ||= {}
     uri = clone
 
     unless data.is_a? Hash
@@ -24,7 +25,8 @@ module UriRequests
   end
 
 
-  def post data = {}, opts = {}
+  def post data = nil, opts = {}
+    data ||= {}
     opts = opts.clone
 
     req = Net::HTTP::Post.new itself
