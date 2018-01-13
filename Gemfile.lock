@@ -1,0 +1,25 @@
+PATH
+  remote: .
+  specs:
+    uri-requests (0.0.1)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    awesome_print (1.8.0)
+    byebug (9.1.0)
+    minitest (5.11.1)
+    rake (10.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  awesome_print (~> 1)
+  byebug (~> 9)
+  minitest (~> 5)
+  rake (~> 10)
+  uri-requests!
+
+BUNDLED WITH
+   1.16.1
