@@ -1,15 +1,28 @@
-Irbrc
+UriRequests
 ======
-Load per project irbrc files
+
+URI::HTTP requests made easier
 
 
 #### Install
-```gem install irbrc```
+```gem install uri-requests```
 
 
 #### Usage
 ```
-require 'irbrc'
+require 'uri-requests'
 
-load_rc
+URI('http://httpbin.org/get').get foo: 'bar'
+
+# automatically package as json and set headers
+URI('http://httpbin.org/post').post(
+  { foo: 'bar' },
+  json: true
+)
+
+# set custom headers
+URI('http://httpbin.org/post').post(
+  { foo: 'bar' },
+  headers: { more_headers: 'hi' },
+)
 ```
