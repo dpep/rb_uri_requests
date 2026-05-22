@@ -1,20 +1,12 @@
-$LOAD_PATH.unshift 'lib'
-package_name = File.realpath(File.dirname(__FILE__)).split('/').last
-lib_name = package_name.gsub '-', '_'
-require lib_name
-klass = Object.const_get(
-  # camelize package name
-  lib_name.split('_').map(&:capitalize).join
-)
-
+require_relative 'lib/uri_requests'
 
 Gem::Specification.new do |s|
-  s.name        = package_name
-  s.version     = klass.const_get 'VERSION'
+  s.name        = 'uri_requests'
+  s.version     = UriRequests::VERSION
   s.authors     = ['Daniel Pepper']
-  s.summary     = klass.to_s
+  s.summary     = 'UriRequests'
   s.description = 'URI::HTTP requests made easier'
-  s.homepage    = "https://github.com/dpep/rb_#{lib_name}"
+  s.homepage    = 'https://github.com/dpep/rb_uri_requests'
   s.license     = 'MIT'
 
   s.files       = Dir.glob('lib/**/*')
